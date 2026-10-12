@@ -1,0 +1,19 @@
+{
+  "name": "Email Writer Assistant",
+  "description": "AI-powered email writing assistant that helps you compose professional and effective emails quickly.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["http://localhost:8080/*", "*://mail.google.com/*"],
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["*://mail.google.com/*"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Email Writer Assistant"
+  }
+}
